@@ -31,3 +31,7 @@ if __name__ == '__main__':
     responce = req.post(hostname + '/action/login', data=auth_data)
     c = req.cookies
     h = req.headers
+
+    responce = req.get(hostname + '/data/production_plan', cookies=c, headers=h)
+    j = json.loads(responce.text)
+    print(j)
